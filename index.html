@@ -26,9 +26,18 @@
 
         /* --- CABEÇALHO E TÍTULOS --- */
         header {
+            position: relative;
             text-align: center;
-            padding-bottom: 20px;
+            padding: 20px 0 40px;
             border-bottom: 2px solid #0056b3;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 60px; /* ajuste conforme necessário */
+            height: auto;
         }
 
         header h1 {
@@ -67,7 +76,7 @@
             border-radius: 8px;
             margin: 20px 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            background-color: #e9ecef; /* Cor de fundo para o placeholder */
+            background-color: #e9ecef;
             border: 1px solid #ccc;
         }
 
@@ -75,7 +84,7 @@
         .cta-button {
             display: block;
             width: fit-content;
-            margin: 30px auto;
+            margin: 30px auto 10px;
             background-image: linear-gradient(to right, #0056b3, #003d82);
             color: #ffffff;
             padding: 18px 40px;
@@ -91,6 +100,14 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
+        }
+
+        /* --- AVISO ABAIXO DO BOTÃO --- */
+        .cta-note {
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: -5px;
         }
 
         /* --- GALERIA DE FOTOS --- */
@@ -153,23 +170,14 @@
  
     <div class="container">
         <header>
-            <div class="header-content">
-                <img src="https://imgur.com/mABaidf.png" alt="Logo da campanha" class="logo">
-                <div class="header-text">
-                    <h1>Juntos por uma Comunidade Mais Segura</h1>
-                    <p>Ajude a reformar a delegacia que protege nossa cidade!</p>
-                </div>   
-            </div>    
+            <img src="https://imgur.com/mABaidf.png" alt="Logo da campanha" class="logo">
+            <h1>Juntos por uma Comunidade Mais Segura</h1>
+            <p>Ajude a reformar a delegacia que protege nossa cidade!</p>
         </header>
 
         <main>
             <!-- SEÇÃO PRINCIPAL - CONVITE À AÇÃO -->
             <section class="section" id="home">
-                <!-- 
-                  INSTRUÇÃO: Substitua o 'src' abaixo pelo caminho de uma imagem principal impactante.
-                  Pode ser uma foto da fachada atual ou uma montagem.
-                  Tamanho ideal: 960x400 pixels.
-                -->
                 <img src="https://imgur.com/tKY4F0U.jpg?text=Foto+Principal+da+Delegacia" alt="Foto principal da campanha de reforma da delegacia" class="main-image">
 
                 <p>
@@ -190,13 +198,8 @@
             <!-- SEÇÃO DA HISTÓRIA -->
             <section class="section" id="historia">
                 <h2>Nossa História</h2>
-                <!-- 
-                  INSTRUÇÃO: Substitua o 'src' por uma foto histórica ou simbólica da delegacia.
-                  Tamanho ideal: 880x400 pixels.
-                -->
                 <img src="https://imgur.com/NG5s0Om.jpg?text=Foto+Histórica+da+Delegacia" alt="Imagem histórica da delegacia" class="content-image">
                 <p>
-                    <!-- INSTRUÇÃO: Escreva aqui a história da delegacia. Fale sobre sua fundação, momentos marcantes, sua importância para a comunidade ao longo dos anos, etc. -->
                     Nossa história começa no coração da Vila Sônia, onde a 34ª Delegacia de Polícia tem atuado como um pilar de segurança para nossa comunidade por muitos anos. Ela já faz parte da rede policial da cidade de São Paulo há décadas, acompanhando o crescimento e as transformações do bairro. 
                 </p>
                 <p>
@@ -216,7 +219,6 @@
                     Esta reforma não é apenas uma obra, é um investimento direto na segurança e no bem-estar de todos. Nossos objetivos são claros:
                 </p>
                 <ul class="goals-list">
-                    <!-- INSTRUÇÃO: Ajuste ou adicione os objetivos da sua reforma. -->
                     <li>Criar uma recepção mais acolhedora e eficiente para o atendimento ao público.</li>
                     <li>Modernizar as salas de investigação e tecnologia para agilizar a resolução de crimes.</li>
                     <li>Melhorar os vestiários e áreas de descanso para os policiais.</li>
@@ -230,10 +232,6 @@
                 <h2>Galeria de Fotos do Estado Atual</h2>
                 <p>Veja abaixo algumas imagens que mostram a necessidade da reforma e imagine o potencial de transformação.</p>
                 <div class="gallery">
-                    <!-- 
-                      INSTRUÇÃO: Substitua os 'src' abaixo pelas fotos que mostram as áreas a serem reformadas.
-                      Você pode adicionar ou remover os 'divs' com a classe "gallery-item".
-                    -->
                     <div class="gallery-item">
                         <img src="https://imgur.com/jSu802K.jpg?text=Foto+da+Recepção+Atual" alt="Estado atual da recepção">
                     </div>
@@ -254,6 +252,8 @@
 
 </body>
 </html>
+
+
 
 
 
