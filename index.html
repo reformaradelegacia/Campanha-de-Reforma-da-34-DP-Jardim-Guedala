@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajude a Reformar Nossa Delegacia</title>
     <style>
-        /* --- ESTILOS GERAIS --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -24,7 +23,6 @@
             border-radius: 8px;
         }
 
-        /* --- CABEÇALHO E TÍTULOS --- */
         header {
             text-align: center;
             padding: 5px 0 5px;
@@ -56,7 +54,6 @@
             margin-top: 10px;
         }
 
-        /* --- SEÇÕES DE CONTEÚDO --- */
         .section {
             margin-bottom: 40px;
         }
@@ -66,46 +63,6 @@
             text-align: justify;
         }
 
-        .main-image, .content-image {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            background-color: #e9ecef;
-            border: 1px solid #ccc;
-        }
-
-        /* --- BOTÃO DE DOAÇÃO --- */
-        .cta-button {
-            display: block;
-            width: fit-content;
-            margin: 30px auto 10px;
-            background-image: linear-gradient(to right, #0056b3, #003d82);
-            color: #ffffff;
-            padding: 18px 40px;
-            font-size: 1.4em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
-        }
-
-        .cta-note {
-            text-align: center;
-            font-size: 1em;
-            color: #555;
-            margin-top: 15px;
-        }
-
         /* --- BARRA DE PROGRESSO --- */
         .progress-container {
             width: 100%;
@@ -113,7 +70,7 @@
             border-radius: 20px;
             overflow: hidden;
             height: 25px;
-            margin: 20px 0;
+            margin: 10px 0 20px;
             position: relative;
         }
 
@@ -124,11 +81,24 @@
             transition: width 0.5s ease-in-out;
         }
 
+        #progress-percent {
+            text-align: center;
+            font-weight: bold;
+            color: #003d82;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
         .progress-marks {
             display: flex;
             justify-content: space-between;
             margin-top: 8px;
             font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .progress-marks span:first-child {
+            margin-left: 20px; 
         }
 
         #progress-text {
@@ -137,7 +107,22 @@
             margin-top: 10px;
         }
 
-        /* --- LISTA DE OBJETIVOS --- */
+        /* --- GALERIA --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* --- LISTA --- */
         .goals-list {
             list-style: none;
             padding: 0;
@@ -167,19 +152,6 @@
             border-top: 1px solid #e0e0e0;
             color: #777;
         }
-
-        /* --- MAPA --- */
-        .map-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-            border-radius: 8px;
-        }
     </style>
 </head>
 <body>
@@ -192,42 +164,13 @@
         </header>
 
         <main>
-            <!-- SEÇÃO PRINCIPAL -->
-            <section class="section" id="home">
-                <img src="https://imgur.com/tKY4F0U.jpg" alt="Foto principal da delegacia" class="main-image">
-                <p>
-                    Nossa delegacia sempre foi mais do que um prédio. É um pilar de segurança, um ponto de apoio para os cidadãos e o local de trabalho de homens e mulheres dedicados a proteger nossa comunidade. No entanto, o tempo deixou suas marcas, e a estrutura que abriga nossos heróis do dia a dia precisa urgentemente da nossa ajuda para continuar servindo com a eficiência e a dignidade que o nosso bairro merece.
-                </p>
-                <p>
-                    Com esta campanha, queremos transformar nossa delegacia em um ambiente mais moderno, seguro e funcional. Uma reforma que vai garantir um atendimento mais ágil e humano para a população e melhores condições de trabalho para nossos policiais.
-                </p>
-                <p>
-                    <strong>Sua doação, de qualquer valor, é um tijolo fundamental nesta construção.</strong> Clique no botão abaixo e ajude-nos a construir um futuro mais seguro para todos.
-                </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform"  class="cta-button">
-                    QUERO DOAR AGORA
-                </a>
-                <p class="cta-note">Clique para preencher o formulário e receber a chave PIX.</p>
-            </section>
-
-            <!-- HISTÓRIA -->
-            <section class="section" id="historia">
-                <h2>Nossa História</h2>
-                <img src="https://imgur.com/NG5s0Om.jpg" alt="Imagem histórica da delegacia" class="content-image">
-                <p>
-                    Nossa história começa no coração da Vila Sônia, onde a 34ª Delegacia de Polícia tem atuado como um pilar de segurança para nossa comunidade por muitos anos. Ela já faz parte da rede policial da cidade de São Paulo há décadas, acompanhando o crescimento e as transformações do bairro. 
-                </p>
-                <p>
-                    Ao longo dos anos, nossa delegacia tem sido um local onde inúmeras vidas foram protegidas e casos resolvidos graças à dedicação incansável de seus oficiais.
-                </p>
-            </section>
-            
             <!-- PROGRESSO -->
             <section class="section" id="progresso">
                 <h2>Progresso da Campanha</h2>
                 <p>
                     A 34ª Delegacia é responsável pela segurança de toda a nossa região. Hoje, a delegacia, que conta com <strong>1140m² de estrutura</strong>, está em más condições, e a <strong>reforma está estimada em R$ 1.200.000</strong>.
                 </p>
+                <p id="progress-percent">0% da meta alcançada</p>
                 <div class="progress-container">
                     <div id="progress-bar" class="progress-bar"></div>
                 </div>
@@ -238,39 +181,17 @@
                     <span>R$1.200k</span>
                 </div>
                 <p id="progress-text">Arrecadado R$92.700 de R$1.200.000</p>
-                <p class="cta-note">A AMJG garante transparência total e publicará relatórios mensais sobre os valores arrecadados e o andamento da obra.</p>
-            </section>
-
-            <!-- PROJETO DETALHADO -->
-            <section class="section" id="projeto">
-                <h2>Como o Projeto Foi Estruturado</h2>
-                <p>
-                    Antes do início da obra, contratamos o arquiteto responsável pela reforma da 2ª CIA do 16º BPM, localizada nos fundos da própria delegacia. Durante 3 meses, ele realizou um levantamento detalhado, incluindo dezenas de entrevistas com a equipe da delegacia. 
-                </p>
-                <p>
-                    A partir desse estudo, foi elaborado o projeto final, aprovado pelo delegado titular e pela AMJG, seguido de uma planilha de custos minuciosa.
-                </p>
-                <p>
-                    A obra contempla melhorias essenciais, como:
-                </p>
-                <ul class="goals-list">
-                    <li>Recepção mais acolhedora e eficiente;</li>
-                    <li>Salas de investigação modernizadas;</li>
-                    <li>Estrutura elétrica e hidráulica renovada;</li>
-                    <li>Vestiários e áreas de descanso adequadas para os policiais;</li>
-                    <li>Acessibilidade para pessoas com deficiência.</li>
-                </ul>
-                <p>
-                    Para garantir a transparência, será realizada uma prestação de contas continuada, alinhada à planilha de custos projetados pelo arquiteto. Além disso, criaremos um comitê de acompanhamento para validar as etapas do projeto e aprovar a destinação dos recursos.
-                </p>
             </section>
 
             <!-- MAPA -->
             <section class="section" id="mapa">
-                <h2>Conheça a área de atuação da 34ª DP</h2>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/d/viewer?mid=1Cn5198YTPrwcJEoVW4B1RIkr1Sc&shorturl=1&ll=-23.59519500763528%2C-46.72258450000001&z=14" allowfullscreen></iframe>
-                </div>
+                <h2>Área de atuação da 34ª DP</h2>
+                <p>
+                    Conheça a área de atuação da 34ª Delegacia de Polícia:  
+                    <a href="https://www.google.com/maps/d/viewer?mid=1Cn5198YTPrwcJEoVW4B1RIkr1Sc&shorturl=1&ll=-23.59519500763528%2C-46.72258450000001&z=14" target="_blank">
+                        Clique aqui para acessar o mapa
+                    </a>.
+                </p>
             </section>
 
             <!-- GALERIA -->
@@ -278,15 +199,9 @@
                 <h2>Galeria de Fotos do Estado Atual</h2>
                 <p>Veja abaixo algumas imagens que mostram a necessidade da reforma.</p>
                 <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="https://imgur.com/jSu802K.jpg" alt="Estado atual da recepção">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgur.com/O4TLYXA.jpg" alt="Estado atual de uma sala">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgur.com/aP4zABx.jpg" alt="Detalhe da fachada precisando de reparos">
-                    </div>
+                    <img src="https://imgur.com/jSu802K.jpg" alt="Estado atual da recepção">
+                    <img src="https://imgur.com/O4TLYXA.jpg" alt="Estado atual de uma sala">
+                    <img src="https://imgur.com/aP4zABx.jpg" alt="Detalhe da fachada precisando de reparos">
                 </div>
             </section>
         </main>
@@ -299,14 +214,18 @@
         
     <script>
         // Valores da campanha
-        const arrecadado = 92700; // valor atualizado
+        const arrecadado = 92700; 
         const meta = 1200000;
 
         const percentual = (arrecadado / meta) * 100;
+
         document.getElementById("progress-bar").style.width = percentual + "%";
 
         document.getElementById("progress-text").innerText =
             `Arrecadado R$${arrecadado.toLocaleString("pt-BR")} de R$${meta.toLocaleString("pt-BR")}`;
+
+        document.getElementById("progress-percent").innerText =
+            `${percentual.toFixed(1)}% da meta alcançada`;
     </script>
 </body>
 </html>
