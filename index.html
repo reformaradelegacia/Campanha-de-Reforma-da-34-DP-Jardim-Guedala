@@ -25,14 +25,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 5px 20px;
+      padding: 15px 20px;
       background: #fff;
       border-bottom: 1px solid #ddd;
-      height: 65px;
+      height: 90px;
     }
 
     .logo {
-      width: 140px;
+      width: 180px;
       height: auto;
     }
 
@@ -46,7 +46,7 @@
       color: #0056b3;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.05em;
+      font-size: 1.1em;
     }
 
     nav a:hover {
@@ -124,10 +124,19 @@
     }
 
     .progress-bar-fill {
-      background: #4caf50; /* verde */
+      background: #4caf50;
       height: 100%;
       width: 0%;
       transition: width 1s;
+    }
+
+    .progress-tick {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #555;
+      opacity: 0.6;
     }
 
     .progress-labels span {
@@ -136,14 +145,15 @@
       font-weight: bold;
       font-size: 14px;
       color: #333;
+      white-space: nowrap;
     }
 
-    .progress-labels .label-top {
-      top: -25px; /* 600k acima */
+    .label-top {
+      top: -25px;
     }
 
-    .progress-labels .label-bottom {
-      bottom: -25px; /* demais abaixo */
+    .label-bottom {
+      bottom: -25px;
     }
 
     #progress-text {
@@ -210,17 +220,16 @@
   </header>
 
   <div class="container">
-    <!-- SEÇÃO PRINCIPAL -->
+    <!-- HOME -->
     <section id="home">
-      <h1 style="text-align:center; color:#003d82;">Juntos por uma Comunidade Mais Segura</h1>
-      <p style="text-align:center; font-size:1.2em; color:#555;">Ajude a reformar a delegacia que protege o nosso bairro!</p>
       <img src="https://imgur.com/tKY4F0U.jpg" alt="Foto principal da campanha" class="main-image">
       <p>
-        Nossa delegacia sempre foi mais do que um prédio. É um pilar de segurança, um ponto de apoio para os cidadãos e o local de trabalho de homens e mulheres dedicados a proteger nossa comunidade.
+        Nossa delegacia sempre foi mais do que um prédio. É um pilar de segurança e apoio para cidadãos, abrigando homens e mulheres dedicados a proteger nossa comunidade. Porém, o tempo deixou suas marcas e agora a estrutura precisa urgentemente da nossa ajuda.
       </p>
       <p>
-        Com esta campanha, queremos transformar nossa delegacia em um ambiente mais moderno, seguro e funcional.
+        Com esta campanha, queremos transformar nossa delegacia em um ambiente mais moderno, seguro e funcional. Uma reforma que garantirá atendimento mais ágil para a população e melhores condições de trabalho para os policiais.
       </p>
+      <p><strong>Sua doação é essencial nesta construção.</strong></p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform" class="cta-button">QUERO DOAR AGORA</a>
       <p class="cta-note">Clique para preencher o formulário e receber a chave PIX.</p>
     </section>
@@ -230,7 +239,10 @@
       <h2>Nossa História</h2>
       <img src="https://imgur.com/NG5s0Om.jpg" alt="Imagem histórica da delegacia" class="content-image">
       <p>
-        A 34ª Delegacia de Polícia tem atuado como um pilar de segurança para nossa comunidade há décadas, acompanhando o crescimento e as transformações da Vila Sônia.
+        Antes do início do projeto, contratamos o arquiteto responsável pela reforma da 2ª CIA do 16BPM, localizada nos fundos da própria delegacia. Durante 3 meses, ele realizou um levantamento detalhado, incluindo entrevistas com a equipe da delegacia.
+      </p>
+      <p>
+        O projeto final foi aprovado pelo delegado titular e pela AMJG, acompanhado de uma planilha de custos minuciosa. A obra está orçada em R$ 1.200.000 e contempla melhorias essenciais.
       </p>
     </section>
 
@@ -240,6 +252,13 @@
       <div class="progress-container">
         <div class="progress-bar-bg">
           <div id="progress-bar" class="progress-bar-fill"></div>
+
+          <!-- Ticks -->
+          <div class="progress-tick" style="left:8.3%;"></div>
+          <div class="progress-tick" style="left:16.7%;"></div>
+          <div class="progress-tick" style="left:50%;"></div>
+          <div class="progress-tick" style="left:100%;"></div>
+
           <!-- Labels -->
           <div class="progress-labels">
             <span style="left:8.3%;" class="label-bottom">100k</span>
@@ -250,40 +269,44 @@
         </div>
         <p id="progress-text"></p>
       </div>
-      <p class="cta-note">A AMJG garante total transparência e publicará prestação de contas mensalmente.</p>
-    </section>
-
-    <!-- OBJETIVOS -->
-    <section>
-      <h2>O Que Esperamos com a Iniciativa</h2>
-      <ul class="goals-list">
-        <li>Criar uma recepção mais acolhedora e eficiente.</li>
-        <li>Modernizar as salas de investigação e tecnologia.</li>
-        <li>Melhorar vestiários e áreas de descanso para policiais.</li>
-        <li>Renovar elétrica e hidráulica.</li>
-        <li>Implementar recursos de acessibilidade.</li>
-      </ul>
-    </section>
-
-    <!-- ATUAÇÃO -->
-    <section id="atuacao">
-      <h2>Área de Atuação</h2>
-      <p style="text-align:center;">
-        Conheça a área de atuação da 34ª DP:<br>
-        <a href="https://www.google.com/maps/d/viewer?mid=1Cn5198YTPrwcJEoVW4B1RIkr1Sc&shorturl=1&ll=-23.59519500763528%2C-46.72258450000001&z=14" target="_blank">
-          Clique aqui para acessar o mapa
-        </a>
+      <p class="cta-note">
+        A AMJG garante total transparência sobre os valores arrecadados e publicará prestação de contas mensalmente, validada por um comitê de acompanhamento.
       </p>
     </section>
 
+    <!-- OBJETIVOS -->
+    <section id="objetivos">
+      <h2>O Que Esperamos com a Iniciativa</h2>
+      <ul class="goals-list">
+        <li>Recepção mais acolhedora e eficiente;</li>
+        <li>Salas de investigação modernizadas;</li>
+        <li>Vestiários e áreas de descanso adequadas;</li>
+        <li>Estrutura elétrica e hidráulica renovada;</li>
+        <li>Acessibilidade para pessoas com deficiência.</li>
+      </ul>
+    </section>
+
     <!-- GALERIA -->
-    <section>
-      <h2>Galeria de Fotos do Estado Atual</h2>
+    <section id="galeria">
+      <h2>Galeria de Fotos</h2>
       <div class="gallery">
         <img src="https://imgur.com/jSu802K.jpg" alt="Recepção atual">
         <img src="https://imgur.com/O4TLYXA.jpg" alt="Sala atual">
         <img src="https://imgur.com/aP4zABx.jpg" alt="Fachada">
       </div>
+    </section>
+
+    <!-- ATUAÇÃO -->
+    <section id="atuacao">
+      <h2>Conheça a Área de Atuação da 34ª DP</h2>
+      <p>
+        Para visualizar o mapa completo da área de atuação, clique no link abaixo:
+      </p>
+      <p>
+        <a href="https://www.google.com/maps/d/viewer?mid=1Cn5198YTPrwcJEoVW4B1RIkr1Sc&shorturl=1&ll=-23.59519500763528%2C-46.72258450000001&z=14" target="_blank">
+          📍 Abrir mapa da área de atuação
+        </a>
+      </p>
     </section>
   </div>
 
@@ -293,9 +316,10 @@
   </footer>
 
   <script>
-    const arrecadado = 143700;
+    const arrecadado = 143700; // valor atual
     const meta = 1200000;
     const percentual = (arrecadado / meta) * 100;
+
     document.getElementById("progress-bar").style.width = percentual + "%";
     document.getElementById("progress-text").innerText =
       `Arrecadado R$${arrecadado.toLocaleString("pt-BR")} de R$${meta.toLocaleString("pt-BR")} (${percentual.toFixed(1)}%)`;
