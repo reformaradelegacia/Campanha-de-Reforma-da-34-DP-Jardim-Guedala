@@ -246,33 +246,47 @@
       </p>
     </section>
 
-    <!-- PROGRESSO -->
-    <section id="progresso">
-      <h2>Progresso da Campanha</h2>
-      <div class="progress-container">
-        <div class="progress-bar-bg">
-          <div id="progress-bar" class="progress-bar-fill"></div>
+<!-- PROGRESSO -->
+<section id="progresso">
+  <h2>Progresso da Campanha</h2>
+  <div class="progress-container">
+    <div class="progress-bar-bg">
+      <div id="progress-bar" class="progress-bar-fill"></div>
 
-          <!-- Ticks -->
-          <div class="progress-tick" style="left:8.3%;"></div>
-          <div class="progress-tick" style="left:16.7%;"></div>
-          <div class="progress-tick" style="left:50%;"></div>
-          <div class="progress-tick" style="left:100%;"></div>
+      <!-- Ticks -->
+      <div class="progress-tick" style="left:8.3%;"></div>
+      <div class="progress-tick" style="left:16.7%;"></div>
+      <div class="progress-tick" style="left:50%;"></div>
+      <div class="progress-tick" style="left:100%;"></div>
+    </div>
 
-          <!-- Labels -->
-          <div class="progress-labels">
-            <span style="left:8.3%;" class="label-bottom">100k</span>
-            <span style="left:16.7%;" class="label-bottom">200k</span>
-            <span style="left:50%;" class="label-top">600k</span>
-            <span style="left:100%;" class="label-bottom">1.200k</span>
-          </div>
-        </div>
-        <p id="progress-text"></p>
-      </div>
-      <p class="cta-note">
-        A AMJG garante total transparência sobre os valores arrecadados e publicará prestação de contas mensalmente, validada por um comitê de acompanhamento.
-      </p>
-    </section>
+    <!-- Labels sempre acima -->
+    <div class="progress-labels">
+      <span style="left:8.3%;" class="label-top">100k</span>
+      <span style="left:16.7%;" class="label-top">200k</span>
+      <span style="left:50%;" class="label-top">600k</span>
+      <span style="left:100%;" class="label-top">1.200k</span>
+    </div>
+    <p id="progress-text"></p>
+  </div>
+  <p class="cta-note">
+    A AMJG garante total transparência sobre os valores arrecadados e publicará prestação de contas mensalmente, validada por um comitê de acompanhamento.
+  </p>
+</section>
+
+<style>
+  .progress-labels span {
+    position: absolute;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+  }
+  .label-top {
+    top: -25px; /* força os textos a ficarem acima da barra */
+  }
+</style>
 
     <!-- OBJETIVOS -->
     <section id="objetivos">
@@ -326,3 +340,4 @@
   </script>
 </body>
 </html>
+
