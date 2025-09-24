@@ -32,7 +32,7 @@
     }
 
     .logo {
-      width: 200px;
+      width: 140px;
       height: auto;
     }
 
@@ -112,7 +112,7 @@
     .progress-container {
       position: relative;
       width: 100%;
-      margin: 20px 0;
+      margin: 40px 0;
     }
 
     .progress-bar-bg {
@@ -124,34 +124,32 @@
     }
 
     .progress-bar-fill {
-      background: #003d82;
+      background: #4caf50; /* verde */
       height: 100%;
       width: 0%;
       transition: width 1s;
-    }
-
-    .progress-labels {
-      position: relative;
-      width: 100%;
-      margin-top: 8px;
-      font-size: 14px;
-      color: #333;
     }
 
     .progress-labels span {
       position: absolute;
       transform: translateX(-50%);
       font-weight: bold;
+      font-size: 14px;
+      color: #333;
     }
 
-    .label-top {
-      top: -25px; /* 600k acima da barra */
+    .progress-labels .label-top {
+      top: -25px; /* 600k acima */
+    }
+
+    .progress-labels .label-bottom {
+      bottom: -25px; /* demais abaixo */
     }
 
     #progress-text {
       text-align: center;
       font-weight: bold;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     /* --- OBJETIVOS --- */
@@ -218,12 +216,11 @@
       <p style="text-align:center; font-size:1.2em; color:#555;">Ajude a reformar a delegacia que protege o nosso bairro!</p>
       <img src="https://imgur.com/tKY4F0U.jpg" alt="Foto principal da campanha" class="main-image">
       <p>
-        Nossa delegacia sempre foi mais do que um prédio. É um pilar de segurança, um ponto de apoio para os cidadãos e o local de trabalho de homens e mulheres dedicados a proteger nossa comunidade. No entanto, o tempo deixou suas marcas, e a estrutura que abriga nossos heróis do dia a dia precisa urgentemente da nossa ajuda.
+        Nossa delegacia sempre foi mais do que um prédio. É um pilar de segurança, um ponto de apoio para os cidadãos e o local de trabalho de homens e mulheres dedicados a proteger nossa comunidade.
       </p>
       <p>
-        Com esta campanha, queremos transformar nossa delegacia em um ambiente mais moderno, seguro e funcional. Uma reforma que vai garantir um atendimento mais ágil e humano para a população e melhores condições de trabalho para nossos policiais.
+        Com esta campanha, queremos transformar nossa delegacia em um ambiente mais moderno, seguro e funcional.
       </p>
-      <p><strong>Sua doação, de qualquer valor, é fundamental.</strong></p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform" class="cta-button">QUERO DOAR AGORA</a>
       <p class="cta-note">Clique para preencher o formulário e receber a chave PIX.</p>
     </section>
@@ -233,27 +230,23 @@
       <h2>Nossa História</h2>
       <img src="https://imgur.com/NG5s0Om.jpg" alt="Imagem histórica da delegacia" class="content-image">
       <p>
-        A 34ª Delegacia de Polícia tem atuado como um pilar de segurança para nossa comunidade há décadas, acompanhando o crescimento e as transformações da Vila Sônia. Ao longo dos anos, inúmeras vidas foram protegidas e casos resolvidos graças à dedicação dos oficiais.
-      </p>
-      <p>
-        Hoje, essa instituição crucial precisa de nós. As instalações merecem uma estrutura renovada, adequada aos desafios modernos e que permita a continuidade desse trabalho essencial.
+        A 34ª Delegacia de Polícia tem atuado como um pilar de segurança para nossa comunidade há décadas, acompanhando o crescimento e as transformações da Vila Sônia.
       </p>
     </section>
 
     <!-- PROGRESSO -->
     <section id="progresso">
       <h2>Progresso da Campanha</h2>
-      <p>
-        A reforma está estimada em <strong>R$ 1.200.000</strong>. Com a sua ajuda, podemos transformar esse espaço em um lugar digno para atender a comunidade.
-      </p>
       <div class="progress-container">
         <div class="progress-bar-bg">
           <div id="progress-bar" class="progress-bar-fill"></div>
-          <!-- Labels posicionados -->
-          <span style="left:8.3%;">100k</span>
-          <span style="left:16.7%;">200k</span>
-          <span style="left:50%;" class="label-top">600k</span>
-          <span style="left:100%;">1.200k</span>
+          <!-- Labels -->
+          <div class="progress-labels">
+            <span style="left:8.3%;" class="label-bottom">100k</span>
+            <span style="left:16.7%;" class="label-bottom">200k</span>
+            <span style="left:50%;" class="label-top">600k</span>
+            <span style="left:100%;" class="label-bottom">1.200k</span>
+          </div>
         </div>
         <p id="progress-text"></p>
       </div>
@@ -300,7 +293,7 @@
   </footer>
 
   <script>
-    const arrecadado = 143700; 
+    const arrecadado = 143700;
     const meta = 1200000;
     const percentual = (arrecadado / meta) * 100;
     document.getElementById("progress-bar").style.width = percentual + "%";
