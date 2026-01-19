@@ -15,7 +15,7 @@
       --light-bg: #f4f7f6;
       --text-dark: #1a1a1a;
       --text-light: #636e72;
-      --header-bg: rgba(10, 25, 47, 0.85); /* Escurecido e transparente */
+      --header-bg: rgba(255, 255, 255, 0.85); /* Branco semitransparente */
     }
 
     * { box-sizing: border-box; }
@@ -36,16 +36,16 @@
       padding: 0 20px;
     }
 
-    /* --- HEADER (ESTILO GERANDO FALCÕES) --- */
+    /* --- HEADER AJUSTADO (MENOR E CENTRALIZADO) --- */
     header {
       background: var(--header-bg);
-      padding: 10px 0;
-      position: fixed; /* Fixado no topo como referência */
+      padding: 5px 0; /* Header muito menor */
+      position: fixed;
       width: 100%;
       top: 0;
       z-index: 2000;
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     }
 
     header .container {
@@ -55,37 +55,56 @@
     }
 
     .logo {
-      width: 140px; /* Logo nova */
+      width: 110px; /* Logo mais discreta no tamanho mas destacada no fundo branco */
       height: auto;
+      display: block;
     }
 
     .nav-header {
       display: flex;
       align-items: center;
-      gap: 30px;
+      flex-grow: 1;
+      justify-content: center; /* Centraliza a navegação */
+    }
+
+    nav {
+      display: flex;
+      gap: 45px; /* Links mais afastados */
     }
 
     nav a {
-      color: var(--pure-white);
+      color: var(--primary-blue);
       text-transform: uppercase;
       font-weight: 700;
       text-decoration: none;
       font-size: 0.75em;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       transition: 0.3s;
     }
 
     nav a:hover { color: var(--accent-gold); }
 
+    /* BOTÃO DOE AGORA NO TOPO */
     .header-cta {
       background: var(--accent-gold);
       color: var(--primary-blue) !important;
-      padding: 10px 20px;
+      padding: 12px 28px; /* Maior */
       border-radius: 4px;
-      font-size: 0.75em !important;
+      font-weight: 700;
+      font-size: 0.85em !important; /* Maior */
+      text-transform: uppercase; /* Em maiúsculo */
+      letter-spacing: 1px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(201, 162, 39, 0.3);
     }
 
-    /* --- HERO IMPACTANTE (ALINHADO À ESQUERDA) --- */
+    .header-cta:hover {
+      background: var(--primary-blue);
+      color: var(--pure-white) !important;
+      transform: translateY(-2px);
+    }
+
+    /* --- HERO COM OFFSET PARA HEADER --- */
     #home {
       height: 100vh;
       position: relative;
@@ -94,7 +113,7 @@
       color: white;
       text-align: left;
       overflow: hidden;
-      padding-top: 80px;
+      padding-top: 60px; /* Espaço para o header não tampar */
     }
 
     .hero-bg {
@@ -108,7 +127,7 @@
 
     h1 {
       font-family: 'Oswald', sans-serif;
-      font-size: 5em; /* Aumentado */
+      font-size: 5em;
       text-transform: uppercase;
       margin: 0;
       line-height: 1;
@@ -134,7 +153,7 @@
       line-height: 1.1;
     }
 
-    /* --- PROGRESSO (AGORA LOGO ABAIXO DO HERO) --- */
+    /* --- PROGRESSO --- */
     .progress-section { background-color: var(--light-bg); }
 
     .progress-container {
@@ -183,7 +202,7 @@
       color: var(--primary-blue);
     }
 
-    /* --- NOVA SEÇÃO: A DELEGACIA (ESTILO GERANDO FALCÕES) --- */
+    /* --- STATS SECTION --- */
     .stats-section {
       background: var(--primary-blue);
       color: white;
@@ -221,7 +240,7 @@
       letter-spacing: 1px;
     }
 
-    /* --- GRID DE PILARES E STATUS --- */
+    /* --- PILARES DA REFORMA (ESTILO CAIXINHA PROGRESSO) --- */
     .goals-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -231,10 +250,17 @@
 
     .goal-card {
       background: #fff;
-      padding: 30px 20px;
+      padding: 40px 25px;
       text-align: center;
-      border: 1px solid #eee;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-top: 5px solid var(--primary-blue); /* Mesmo modelo do progresso */
       transition: 0.3s;
+    }
+
+    .goal-card:hover {
+      transform: translateY(-10px);
+      border-top-color: var(--accent-gold);
     }
 
     .goal-card i {
@@ -246,9 +272,16 @@
     .goal-card strong {
       display: block;
       font-family: 'Oswald', sans-serif;
-      font-size: 1.1em;
-      margin-bottom: 10px;
+      font-size: 1.2em;
+      margin-bottom: 12px;
       text-transform: uppercase;
+      color: var(--primary-blue);
+    }
+
+    .goal-card p {
+      font-size: 0.9em;
+      color: var(--text-light);
+      margin: 0;
     }
 
     /* --- SLIDESHOWS --- */
@@ -305,7 +338,9 @@
     @media (max-width: 992px) {
       h1 { font-size: 3em; }
       .stats-grid, .goals-grid { grid-template-columns: 1fr; }
-      .nav-header { display: none; }
+      .nav-header { flex-direction: column; gap: 15px; }
+      nav { gap: 15px; }
+      header .container { flex-direction: column; padding: 10px; }
     }
   </style>
 </head>
@@ -321,8 +356,8 @@
           <a href="#estatisticas">A Delegacia</a>
           <a href="#objetivos">Pilares</a>
         </nav>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform" class="header-cta nav-header">Doe Agora</a>
       </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform" class="header-cta">DOE AGORA</a>
     </div>
   </header>
 
@@ -428,22 +463,22 @@
         <div class="goal-card">
           <i class="fa-solid fa-users-line"></i>
           <strong>Atendimento</strong>
-          <p>Recepção humanizada e acolhimento eficiente.</p>
+          <p>Recepção humanizada e acolhimento eficiente para todos.</p>
         </div>
         <div class="goal-card">
           <i class="fa-solid fa-microchip"></i>
           <strong>Tecnologia</strong>
-          <p>Salas de investigação com infraestrutura moderna.</p>
+          <p>Salas de investigação equipadas com o que há de mais moderno.</p>
         </div>
         <div class="goal-card">
           <i class="fa-solid fa-shield-halved"></i>
           <strong>Segurança</strong>
-          <p>Melhoria nas condições de trabalho do efetivo.</p>
+          <p>Ambiente seguro e funcional para o desempenho do efetivo.</p>
         </div>
         <div class="goal-card">
           <i class="fa-solid fa-wheelchair"></i>
           <strong>Acessibilidade</strong>
-          <p>Adequação total para pessoas com deficiência.</p>
+          <p>Projeto 100% adequado para portadores de necessidades especiais.</p>
         </div>
       </div>
     </div>
@@ -476,18 +511,16 @@
   </footer>
 
   <script>
-    // --- LÓGICA DO PROGRESSO ---
-    const arrecadado = 143555.72; 
+    const arrecadado = 143555.72; 
     const meta = 1200000;
     const percentual = (arrecadado / meta) * 100;
 
     setTimeout(() => {
       document.getElementById("progress-bar").style.width = percentual + "%";
-      document.getElementById("progress-text").innerText = 
+      document.getElementById("progress-text").innerText = 
         `R$ ${arrecadado.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} ARRECADADOS (${percentual.toFixed(1)}%)`;
     }, 500);
 
-    // --- LÓGICA DO SLIDESHOW ---
     function setupSlideshow(containerId) {
       const container = document.getElementById(containerId);
       const slides = container.querySelectorAll('.slide');
