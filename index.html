@@ -385,44 +385,59 @@
       font-size: 1em;
     }
 
-    /* --- AJUSTES RESPONSIVOS --- */
+    /* --- AJUSTES RESPONSIVOS (MOBILE SMALLER ASPECT) --- */
     @media (max-width: 992px) {
-      section { padding: 60px 0; }
+      body { font-size: 14px; } /* Reduz a escala geral do texto */
       
-      header .container {
-        padding: 10px 20px;
-      }
+      section { padding: 40px 0; } /* Seções mais curtas verticalmente */
+      
+      header .container { padding: 8px 15px; }
+      .logo { width: 85px; }
+      .header-cta { padding: 8px 15px; font-size: 0.75em !important; }
 
-      .nav-header { display: none; } /* Esconde nav no mobile para evitar quebra */
+      .nav-header { display: none; }
 
       #home {
-        height: auto;
-        padding: 160px 0 80px;
+        height: 70vh; /* Altura menor para caber conteúdo abaixo */
+        min-height: 450px;
+        padding: 100px 0 40px;
         align-items: center;
         text-align: center;
       }
 
-      h1 { font-size: 2.2em; margin: 0 auto; }
-      h2 { font-size: 2em; }
-      .hero-subtext { font-size: 1.1em; margin: 20px auto 30px; }
+      h1 { font-size: 1.8em; margin: 0 auto; }
+      h2 { font-size: 1.6em; margin-bottom: 20px; text-align: center; }
+      .hero-subtext { font-size: 1em; margin: 15px auto 25px; }
+      .cta-button { padding: 12px 25px; font-size: 0.9em; }
 
       .stats-grid, .goals-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        max-width: 90%;
+        margin: 20px auto 0;
       }
 
       .progress-container {
-        padding: 30px 20px;
+        padding: 25px 15px;
+        margin-top: 20px;
       }
 
-      #progress-text { font-size: 1.4em; }
+      .progress-bar-bg { height: 30px; }
+      #progress-text { font-size: 1.2em; margin-top: 20px; }
+      .progress-labels span { font-size: 0.7em; }
 
-      .stat-number { font-size: 2.8em; }
+      .stat-box { padding: 15px 20px; }
+      .stat-number { font-size: 2.2em; }
+      .stat-desc { font-size: 0.8em; }
+
+      .goal-card { padding: 25px 15px; }
+      .goal-card i { font-size: 2em; margin-bottom: 10px; }
+      .goal-card strong { font-size: 1em; }
 
       .footer-grid {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 30px;
       }
 
       .footer-left, .footer-right {
@@ -433,12 +448,23 @@
       }
 
       .footer-logo-large {
-        width: 180px;
-        margin: 0 auto 20px;
+        width: 140px;
+        margin: 0 auto 15px;
       }
 
       .slideshow-container {
-        height: 300px;
+        height: 220px; /* Slideshow menos "gigante" */
+        margin-top: 20px;
+      }
+      
+      /* Ajuste para as flexbox de texto + imagem */
+      div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 30px !important;
+      }
+      
+      div[style*="min-width: 300px"] {
+        min-width: 100% !important;
       }
     }
   </style>
@@ -471,7 +497,7 @@
 
   <section id="progresso" class="progress-section">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 50px;">
+      <div style="text-align: center; margin-bottom: 30px;">
         <h2>Transparência e Progresso</h2>
         <p>Acompanhe a evolução da arrecadação e as etapas já concluídas.</p>
       </div>
@@ -555,7 +581,7 @@
 
   <section id="objetivos">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 60px;">
+      <div style="text-align: center; margin-bottom: 40px;">
         <h2>Pilares da Reforma</h2>
       </div>
       <div class="goals-grid">
@@ -619,7 +645,7 @@
           </ul>
         </div>
       </div>
-      <div style="margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; font-size: 0.8em;">
+      <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; font-size: 0.8em;">
         <p>© 2026 - Todos os direitos reservados.</p>
       </div>
     </div>
