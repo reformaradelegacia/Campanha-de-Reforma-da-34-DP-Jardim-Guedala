@@ -39,7 +39,7 @@
     /* --- HEADER AJUSTADO (MENOR E CENTRALIZADO) --- */
     header {
       background: var(--header-bg);
-      padding: 5px 0; /* Header muito menor */
+      padding: 5px 0;
       position: fixed;
       width: 100%;
       top: 0;
@@ -55,7 +55,7 @@
     }
 
     .logo {
-      width: 110px; /* Logo mais discreta no tamanho mas destacada no fundo branco */
+      width: 110px;
       height: auto;
       display: block;
     }
@@ -64,12 +64,12 @@
       display: flex;
       align-items: center;
       flex-grow: 1;
-      justify-content: center; /* Centraliza a navegação */
+      justify-content: center;
     }
 
     nav {
       display: flex;
-      gap: 45px; /* Links mais afastados */
+      gap: 45px;
     }
 
     nav a {
@@ -84,15 +84,14 @@
 
     nav a:hover { color: var(--accent-gold); }
 
-    /* BOTÃO DOE AGORA NO TOPO */
     .header-cta {
       background: var(--accent-gold);
       color: var(--primary-blue) !important;
-      padding: 12px 28px; /* Maior */
+      padding: 12px 28px;
       border-radius: 4px;
       font-weight: 700;
-      font-size: 0.85em !important; /* Maior */
-      text-transform: uppercase; /* Em maiúsculo */
+      font-size: 0.85em !important;
+      text-transform: uppercase;
       letter-spacing: 1px;
       transition: 0.3s;
       box-shadow: 0 4px 10px rgba(201, 162, 39, 0.3);
@@ -104,7 +103,7 @@
       transform: translateY(-2px);
     }
 
-    /* --- HERO COM OFFSET PARA HEADER --- */
+    /* --- HERO COM AJUSTE DE POSICIONAMENTO --- */
     #home {
       height: 100vh;
       position: relative;
@@ -113,7 +112,7 @@
       color: white;
       text-align: left;
       overflow: hidden;
-      padding-top: 60px; /* Espaço para o header não tampar */
+      padding-top: 100px; /* Aumentado para o header não tampar o texto */
     }
 
     .hero-bg {
@@ -240,7 +239,7 @@
       letter-spacing: 1px;
     }
 
-    /* --- PILARES DA REFORMA (ESTILO CAIXINHA PROGRESSO) --- */
+    /* --- PILARES --- */
     .goals-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -254,7 +253,7 @@
       text-align: center;
       border-radius: 4px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border-top: 5px solid var(--primary-blue); /* Mesmo modelo do progresso */
+      border-top: 5px solid var(--primary-blue);
       transition: 0.3s;
     }
 
@@ -328,19 +327,76 @@
       color: var(--primary-blue);
     }
 
+    /* --- FOOTER ESTILO GERANDO FALCÕES --- */
     footer {
       background: #050c18;
       color: #fff;
+      padding: 80px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .footer-left {
+      flex: 1;
+      text-align: left;
+      color: rgba(255,255,255,0.6); /* Cor apagada */
+    }
+
+    .footer-right {
+      flex: 1;
+      text-align: right;
+      color: rgba(255,255,255,0.6); /* Cor apagada */
+    }
+
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 20px;
+      filter: grayscale(1) brightness(1.5); /* Efeito mais discreto */
+      opacity: 0.7;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-list li {
+      margin-bottom: 10px;
+      font-size: 0.9em;
+    }
+
+    .footer-bottom {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
       text-align: center;
-      padding: 60px 20px;
+      font-size: 0.75em;
+      color: rgba(255,255,255,0.3);
     }
 
     @media (max-width: 992px) {
       h1 { font-size: 3em; }
       .stats-grid, .goals-grid { grid-template-columns: 1fr; }
-      .nav-header { flex-direction: column; gap: 15px; }
-      nav { gap: 15px; }
-      header .container { flex-direction: column; padding: 10px; }
+      .footer-grid { flex-direction: column; text-align: center; }
+      .footer-right { text-align: center; }
+      .footer-left { text-align: center; }
+      .nav-header { display: none; }
     }
   </style>
 </head>
@@ -504,20 +560,36 @@
 
   <footer>
     <div class="container">
-      <p><strong>ASSOCIAÇÃO DE MORADORES DO JARDIM GUEDALA (AMJG)</strong></p>
-      <p>CNPJ: 27.458.821/0001-22</p>
-      <p style="opacity: 0.6; font-size: 0.8em; margin-top: 30px;">© 2026 - Todos os direitos reservados.</p>
+      <div class="footer-grid">
+        <div class="footer-left">
+          <img src="https://imgur.com/kkRlRVE.png" alt="Logo AMJG" class="footer-logo">
+          <p style="font-weight: 700; margin-bottom: 5px; color: #fff;">Associação de Moradores do Jardim Guedala</p>
+          <p>CNPJ: 27.458.821/0001-22</p>
+        </div>
+
+        <div class="footer-right">
+          <span class="footer-title">Contatos</span>
+          <ul class="footer-list">
+            <li><strong>Telefone:</strong> (11) 93455-4093</li>
+            <li><strong>E-mail:</strong> contato@guedala.org</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 - Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    const arrecadado = 143555.72; 
+    const arrecadado = 143555.72; 
     const meta = 1200000;
     const percentual = (arrecadado / meta) * 100;
 
     setTimeout(() => {
       document.getElementById("progress-bar").style.width = percentual + "%";
-      document.getElementById("progress-text").innerText = 
+      document.getElementById("progress-text").innerText = 
         `R$ ${arrecadado.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} ARRECADADOS (${percentual.toFixed(1)}%)`;
     }, 500);
 
