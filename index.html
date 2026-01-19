@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajude a Reformar Nossa Delegacia</title>
+  <title>Reforma 34ª DP | Campanha Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary-blue: #0a192f; /* Azul Marinho Profundo */
+      --secondary-blue: #172a45;
+      --gold: #c9a227; /* Dourado para detalhes de autoridade */
+      --light-gray: #f8f9fa;
+      --text-dark: #2d3436;
+      --text-light: #636e72;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.8;
       margin: 0;
       padding: 0;
-      background-color: #f4f7f6;
-      color: #333;
+      background-color: #fff;
+      color: var(--text-dark);
     }
 
     .container {
@@ -20,328 +31,371 @@
       padding: 0 20px;
     }
 
-    /* --- HEADER --- */
+    /* --- HEADER & LOGO --- */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 20px;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      height: 90px;
+      background: var(--primary-blue);
+      padding: 30px 0;
+      text-align: center;
+      border-bottom: 4px solid var(--gold);
     }
 
     .logo {
-      width: 180px;
+      width: 140px; /* Ajuste para logo mais elegante */
       height: auto;
+      filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.3));
+      margin-bottom: 20px;
     }
 
     nav {
-      flex: 1;
-      text-align: center;
+      margin-top: 10px;
     }
 
     nav a {
-      margin: 0 15px;
-      color: #0056b3;
-      font-weight: bold;
+      margin: 0 20px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
       text-decoration: none;
-      font-size: 1.1em;
+      font-size: 0.9em;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--gold);
+    }
+
+    /* --- HERO / HOME --- */
+    #home {
+      padding: 60px 0;
+      text-align: center;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://www.transparenttextures.com/patterns/cubes.png');
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-blue);
+    }
+
+    .main-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
     }
 
     /* --- SEÇÕES --- */
     section {
-      padding: 40px 0;
+      padding: 80px 0;
+    }
+
+    .section-bg {
+      background-color: var(--light-gray);
     }
 
     section h2 {
-      font-size: 2em;
-      color: #0056b3;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
     }
 
-    section p {
-      font-size: 1.1em;
-      text-align: justify;
+    section h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      position: absolute;
+      bottom: -10px;
+      left: 0;
     }
 
-    .main-image, .content-image {
+    .content-image {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 20px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      margin: 30px 0;
     }
 
     /* --- BOTÃO DE DOAÇÃO --- */
-    .cta-button {
-      display: block;
-      width: fit-content;
-      margin: 30px auto 10px;
-      background-image: linear-gradient(to right, #0056b3, #003d82);
-      color: #ffffff;
-      padding: 18px 40px;
-      font-size: 1.4em;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
+    .cta-container {
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 86, 179, 0.4);
+      margin-top: 50px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: #fff;
+      padding: 20px 50px;
+      font-size: 1.1em;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid var(--gold);
+      transition: all 0.4s;
     }
 
     .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
+      background: var(--gold);
+      color: var(--primary-blue);
+      transform: translateY(-5px);
     }
 
     .cta-note {
-      text-align: center;
-      font-size: 1em;
-      color: #555;
-      margin-top: 15px;
+      display: block;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: var(--text-light);
+      font-style: italic;
     }
 
     /* --- PROGRESSO --- */
     .progress-container {
-      position: relative;
-      width: 100%;
-      margin: 40px 0;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin: 50px 0;
     }
 
     .progress-bar-bg {
-      background: #eee;
-      height: 25px;
-      border-radius: 15px;
+      background: #e9ecef;
+      height: 30px;
+      border-radius: 20px;
       overflow: hidden;
       position: relative;
     }
 
     .progress-bar-fill {
-      background: #4caf50;
+      background: linear-gradient(90deg, var(--secondary-blue), var(--primary-blue));
       height: 100%;
       width: 0%;
-      transition: width 1s;
+      transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
     }
 
     .progress-tick {
       position: absolute;
       top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #555;
-      opacity: 0.6;
+      width: 1px;
+      height: 100%;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .progress-labels {
+      position: relative;
+      height: 40px;
+      margin-top: 10px;
     }
 
     .progress-labels span {
       position: absolute;
       transform: translateX(-50%);
-      font-weight: bold;
-      font-size: 14px;
-      color: #333;
-      white-space: nowrap;
-    }
-
-    .label-top {
-      top: -25px;
-    }
-
-    .label-bottom {
-      bottom: -25px;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--primary-blue);
     }
 
     #progress-text {
       text-align: center;
-      font-weight: bold;
-      margin-top: 40px;
-    }
-
-    /* --- OBJETIVOS --- */
-    .goals-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .goals-list li {
-      font-size: 1.1em;
-      padding: 10px 0 10px 35px;
-      position: relative;
-    }
-
-    .goals-list li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      color: #28a745;
-      font-weight: bold;
       font-size: 1.4em;
+      font-weight: 700;
+      margin-top: 30px;
+      color: var(--primary-blue);
+    }
+
+    /* --- OBJETIVOS (Cards) --- */
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .goal-card {
+      background: #fff;
+      padding: 25px;
+      border-left: 5px solid var(--gold);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
     /* --- GALERIA --- */
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
     }
 
     .gallery img {
-      width: 30%;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 4px;
+      filter: grayscale(30%);
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      filter: grayscale(0%);
     }
 
     /* --- FOOTER --- */
     footer {
+      background: var(--primary-blue);
+      color: #fff;
       text-align: center;
-      padding: 20px;
-      border-top: 1px solid #e0e0e0;
-      color: #777;
-      margin-top: 40px;
+      padding: 60px 20px;
+      margin-top: 0;
+    }
+
+    footer p {
+      margin: 5px 0;
+      opacity: 0.8;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .gallery { grid-template-columns: 1fr; }
+      nav a { display: block; margin: 10px 0; }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="https://imgur.com/XC8fbWo.png" alt="Logo da campanha" class="logo">
-    <nav>
-      <a href="#historia">História</a>
-      <a href="#progresso">Progresso</a>
-      <a href="#atuacao">Atuação</a>
-    </nav>
+    <div class="container">
+      <img src="https://imgur.com/XC8fbWo.png" alt="Logo Oficial" class="logo">
+      <nav>
+        <a href="#historia">A Instituição</a>
+        <a href="#progresso">Transparência</a>
+        <a href="#objetivos">O Projeto</a>
+        <a href="#galeria">Registros</a>
+      </nav>
+    </div>
   </header>
 
   <div class="container">
-    <!-- HOME -->
     <section id="home">
-      <img src="https://imgur.com/tKY4F0U.jpg" alt="Foto principal da campanha" class="main-image">
-      <p>
-        Nossa delegacia sempre foi mais do que um prédio. É um pilar de segurança e apoio para cidadãos, abrigando homens e mulheres dedicados a proteger nossa comunidade. Porém, o tempo deixou suas marcas e agora a estrutura precisa urgentemente da nossa ajuda.
+      <h1>Modernização da 34ª DP</h1>
+      <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.2em; color: var(--text-light);">
+        Compromisso com a segurança pública e o atendimento digno ao cidadão do Jardim Guedala.
       </p>
-      <p>
-        Com esta campanha, queremos transformar nossa delegacia em um ambiente mais moderno, seguro e funcional. Uma reforma que garantirá atendimento mais ágil para a população e melhores condições de trabalho para os policiais.
-      </p>
-      <p><strong>Sua doação é essencial nesta construção.</strong></p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform" class="cta-button">QUERO DOAR AGORA</a>
-      <p class="cta-note">Clique para preencher o formulário e receber a chave PIX.</p>
+      <img src="https://imgur.com/tKY4F0U.jpg" alt="Fachada da Delegacia" class="main-image">
+      
+      <div class="cta-container">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb1aDTJqcejZ1gkbk2jYsToOjcVA4iDVkSsVSxOxWHrzDB5A/viewform" class="cta-button">Contribuir com a Reforma</a>
+        <span class="cta-note">Sua contribuição é processada via AMJG com total segurança.</span>
+      </div>
     </section>
-
-    <!-- HISTÓRIA -->
-    <section id="historia">
-      <h2>Nossa História</h2>
-      <img src="https://imgur.com/NG5s0Om.jpg" alt="Imagem histórica da delegacia" class="content-image">
-      <p>
-        Antes do início do projeto, contratamos o arquiteto responsável pela reforma da 2ª CIA do 16BPM, localizada nos fundos da própria delegacia. Durante 3 meses, ele realizou um levantamento detalhado, incluindo entrevistas com a equipe da delegacia.
-      </p>
-      <p>
-        O projeto final foi aprovado pelo delegado titular e pela AMJG, acompanhado de uma planilha de custos minuciosa. A obra está orçada em R$ 1.200.000 e contempla melhorias essenciais.
-      </p>
-    </section>
-
-<!-- PROGRESSO -->
-<section id="progresso">
-  <h2>Progresso da Campanha</h2>
-  <div class="progress-container">
-    <div class="progress-bar-bg">
-      <div id="progress-bar" class="progress-bar-fill"></div>
-
-      <!-- Ticks -->
-      <div class="progress-tick" style="left:8.3%;"></div>
-      <div class="progress-tick" style="left:16.7%;"></div>
-      <div class="progress-tick" style="left:50%;"></div>
-      <div class="progress-tick" style="left:100%;"></div>
-    </div>
-
-    <!-- Labels sempre acima -->
-    <div class="progress-labels">
-      <span style="left:8.3%;" class="label-top">100k</span>
-      <span style="left:16.7%;" class="label-top">200k</span>
-      <span style="left:50%;" class="label-top">600k</span>
-      <span style="left:100%;" class="label-top">1.200k</span>
-    </div>
-    <p id="progress-text"></p>
   </div>
-  <p class="cta-note">
-    A AMJG garante total transparência sobre os valores arrecadados e publicará prestação de contas mensalmente, validada por um comitê de acompanhamento.
-  </p>
-</section>
 
-<style>
-  .progress-labels span {
-    position: absolute;
-    transform: translateX(-50%);
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-    white-space: nowrap;
-  }
-  .label-top {
-    top: -25px; /* força os textos a ficarem acima da barra */
-  }
-</style>
+  <div class="section-bg">
+    <div class="container">
+      <section id="historia">
+        <h2>A Instituição e o Projeto</h2>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: center;">
+          <div style="flex: 1; min-width: 300px;">
+            <p>
+              A 34ª Delegacia de Polícia é um pilar fundamental da segurança em nossa região. Com o objetivo de elevar o padrão de atendimento, iniciamos um projeto técnico de reforma estrutural coordenado por especialistas.
+            </p>
+            <p>
+              O planejamento foi realizado ao longo de 3 meses, incluindo levantamentos técnicos e aprovação formal pela administração superior e pela AMJG. O orçamento de <strong>R$ 1.200.000</strong> reflete a necessidade de uma infraestrutura condizente com as demandas atuais.
+            </p>
+          </div>
+          <div style="flex: 1; min-width: 300px;">
+            <img src="https://imgur.com/NG5s0Om.jpg" alt="Projeto Técnico" class="content-image" style="margin: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 
-    <!-- OBJETIVOS -->
-    <section id="objetivos">
-      <h2>O Que Esperamos com a Iniciativa</h2>
-      <ul class="goals-list">
-        <li>Recepção mais acolhedora e eficiente;</li>
-        <li>Salas de investigação modernizadas;</li>
-        <li>Vestiários e áreas de descanso adequadas;</li>
-        <li>Estrutura elétrica e hidráulica renovada;</li>
-        <li>Acessibilidade para pessoas com deficiência.</li>
-      </ul>
+  <div class="container">
+    <section id="progresso">
+      <div style="text-align: center;">
+        <h2>Transparência e Progresso</h2>
+        <p>Acompanhe em tempo real a evolução da nossa arrecadação.</p>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar-bg">
+          <div id="progress-bar" class="progress-bar-fill"></div>
+          <div class="progress-tick" style="left:8.3%;"></div>
+          <div class="progress-tick" style="left:16.7%;"></div>
+          <div class="progress-tick" style="left:50%;"></div>
+        </div>
+
+        <div class="progress-labels">
+          <span style="left:0%;">0</span>
+          <span style="left:8.3%;">100k</span>
+          <span style="left:16.7%;">200k</span>
+          <span style="left:50%;">600k</span>
+          <span style="left:100%;">1.2M</span>
+        </div>
+        <p id="progress-text">Carregando dados...</p>
+      </div>
+      
+      <p style="text-align: center; color: var(--text-light); font-size: 0.9em;">
+        * Prestação de contas validada mensalmente pelo comitê de acompanhamento da AMJG.
+      </p>
     </section>
 
-    <!-- GALERIA -->
-    <section id="galeria">
-      <h2>Galeria de Fotos</h2>
-      <div class="gallery">
-        <img src="https://imgur.com/jSu802K.jpg" alt="Recepção atual">
-        <img src="https://imgur.com/O4TLYXA.jpg" alt="Sala atual">
-        <img src="https://imgur.com/aP4zABx.jpg" alt="Fachada">
+    <section id="objetivos">
+      <h2>Pilares da Reforma</h2>
+      <div class="goals-grid">
+        <div class="goal-card">
+          <strong>Atendimento Humanizado</strong>
+          <p>Recepção planejada para acolhimento eficiente e acessível.</p>
+        </div>
+        <div class="goal-card">
+          <strong>Modernização Tecnológica</strong>
+          <p>Salas de investigação equipadas com infraestrutura de rede e elétrica nova.</p>
+        </div>
+        <div class="goal-card">
+          <strong>Dignidade Operacional</strong>
+          <p>Vestiários e áreas de descanso adequadas para o efetivo policial.</p>
+        </div>
+        <div class="goal-card">
+          <strong>Acessibilidade Plena</strong>
+          <p>Adequação total para pessoas com deficiência física (PCD).</p>
+        </div>
       </div>
     </section>
 
-    <!-- ATUAÇÃO -->
-    <section id="atuacao">
-      <h2>Conheça a Área de Atuação da 34ª DP</h2>
-      <p>
-        Para visualizar o mapa completo da área de atuação, clique no link abaixo:
-      </p>
-      <p>
-        <a href="https://www.google.com/maps/d/viewer?mid=1Cn5198YTPrwcJEoVW4B1RIkr1Sc&shorturl=1&ll=-23.59519500763528%2C-46.72258450000001&z=14" target="_blank">
-          📍 Abrir mapa da área de atuação
-        </a>
-      </p>
+    <section id="galeria">
+      <h2>Registros Atuais</h2>
+      <div class="gallery">
+        <img src="https://imgur.com/jSu802K.jpg" alt="Recepção">
+        <img src="https://imgur.com/O4TLYXA.jpg" alt="Interior">
+        <img src="https://imgur.com/aP4zABx.jpg" alt="Fachada Atual">
+      </div>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2024 Campanha de Reforma da 34ª DP Jardim Guedala. Todos os direitos reservados.</p>
-    <p>CNPJ: 27.458.821/0001-22</p>
+    <div class="container">
+      <p><strong>ASSOCIAÇÃO DE MORADORES DO JARDIM GUEDALA (AMJG)</strong></p>
+      <p>Campanha de Apoio à 34ª Delegacia de Polícia</p>
+      <p style="margin-top: 20px; font-size: 0.8em;">CNPJ: 27.458.821/0001-22</p>
+      <p style="font-size: 0.8em;">© 2026 - Todos os direitos reservados.</p>
+    </div>
   </footer>
 
   <script>
-    const arrecadado = 237000; // valor atual
+    // Dados da Campanha
+    const arrecadado = 237000; 
     const meta = 1200000;
     const percentual = (arrecadado / meta) * 100;
 
-    document.getElementById("progress-bar").style.width = percentual + "%";
+    // Animação da Barra
+    setTimeout(() => {
+      document.getElementById("progress-bar").style.width = percentual + "%";
+    }, 500);
+
     document.getElementById("progress-text").innerText =
-      `Arrecadado R$${arrecadado.toLocaleString("pt-BR")} de R$${meta.toLocaleString("pt-BR")} (${percentual.toFixed(1)}%)`;
+      `R$ ${arrecadado.toLocaleString("pt-BR")} arrecadados (${percentual.toFixed(1)}%)`;
   </script>
 </body>
 </html>
-
-
-
-
-
