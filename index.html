@@ -103,16 +103,17 @@
       transform: translateY(-2px);
     }
 
-    /* --- HERO AJUSTADO (TEXTO MENOR E MAIS PARA BAIXO) --- */
+    /* --- HERO --- */
     #home {
       height: 100vh;
+      min-height: 600px;
       position: relative;
       display: flex;
-      align-items: flex-end; /* Alinha o conteúdo mais para baixo */
+      align-items: flex-end;
       color: white;
       text-align: left;
       overflow: hidden;
-      padding-bottom: 15vh; /* Distância do fundo para não ficar colado */
+      padding-bottom: 15vh;
     }
 
     .hero-bg {
@@ -126,7 +127,7 @@
 
     h1 {
       font-family: 'Oswald', sans-serif;
-      font-size: 3.5em; /* Reduzido de 5em */
+      font-size: 3.5em;
       text-transform: uppercase;
       margin: 0;
       line-height: 1.1;
@@ -134,7 +135,7 @@
     }
 
     .hero-subtext {
-      font-size: 1.2em; /* Reduzido de 1.6em */
+      font-size: 1.2em;
       max-width: 550px;
       margin: 20px 0 35px;
       font-weight: 300;
@@ -327,10 +328,10 @@
       color: var(--primary-blue);
     }
 
-    /* --- FOOTER AJUSTADO (LOGO MAIOR E SEÇÕES) --- */
+    /* --- FOOTER --- */
     footer {
       background: #050c18;
-      color: rgba(255, 255, 255, 0.5); /* Cor apagada */
+      color: rgba(255, 255, 255, 0.5);
       padding: 80px 0;
     }
 
@@ -347,7 +348,7 @@
     }
 
     .footer-logo-large {
-      width: 250px; /* Logo bem maior */
+      width: 250px;
       height: auto;
       margin-bottom: 25px;
       display: block;
@@ -384,14 +385,61 @@
       font-size: 1em;
     }
 
+    /* --- AJUSTES RESPONSIVOS --- */
     @media (max-width: 992px) {
-      h1 { font-size: 2.5em; }
-      #home { align-items: center; padding-bottom: 0; text-align: center; }
-      .hero-subtext { margin: 20px auto 35px; }
-      .footer-grid { flex-direction: column; text-align: center; }
-      .footer-right { text-align: center; }
-      .footer-left { display: flex; flex-direction: column; align-items: center; }
-      .nav-header { display: none; }
+      section { padding: 60px 0; }
+      
+      header .container {
+        padding: 10px 20px;
+      }
+
+      .nav-header { display: none; } /* Esconde nav no mobile para evitar quebra */
+
+      #home {
+        height: auto;
+        padding: 160px 0 80px;
+        align-items: center;
+        text-align: center;
+      }
+
+      h1 { font-size: 2.2em; margin: 0 auto; }
+      h2 { font-size: 2em; }
+      .hero-subtext { font-size: 1.1em; margin: 20px auto 30px; }
+
+      .stats-grid, .goals-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .progress-container {
+        padding: 30px 20px;
+      }
+
+      #progress-text { font-size: 1.4em; }
+
+      .stat-number { font-size: 2.8em; }
+
+      .footer-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .footer-left, .footer-right {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-large {
+        width: 180px;
+        margin: 0 auto 20px;
+      }
+
+      .slideshow-container {
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -470,12 +518,12 @@
   <section id="historia">
     <div class="container">
       <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center;">
-        <div style="flex: 1; min-width: 350px;">
+        <div style="flex: 1; min-width: 300px;">
           <h2>A Instituição e o Projeto</h2>
           <p>A 34ª Delegacia de Polícia é um pilar fundamental da segurança em nossa região. Com o objetivo de elevar o padrão de atendimento, iniciamos um projeto técnico de reforma estrutural coordenado por especialistas.</p>
           <p>O planejamento foi realizado ao longo de 3 meses, incluindo levantamentos técnicos e aprovação formal. O orçamento de <strong>R$ 1.200.000</strong> contempla melhorias essenciais para a operação policial e atendimento ao público.</p>
         </div>
-        <div style="flex: 1; min-width: 350px;">
+        <div style="flex: 1; min-width: 300px;">
           <div class="slideshow-container" id="slideshow-projeto">
             <div class="slide active" style="background-image: url('https://imgur.com/NG5s0Om.jpg');"></div>
             <div class="slide" style="background-image: url('https://imgur.com/aP4zABx.jpg');"></div>
@@ -538,14 +586,14 @@
   <section id="galeria" class="progress-section">
     <div class="container">
       <div style="display: flex; gap: 60px; flex-wrap: wrap; align-items: center;">
-        <div style="flex: 1; min-width: 350px;">
+        <div style="flex: 1; min-width: 300px;">
           <div class="slideshow-container" id="slideshow-registros">
             <div class="slide active" style="background-image: url('https://imgur.com/jSu802K.jpg');"></div>
             <div class="slide" style="background-image: url('https://imgur.com/O4TLYXA.jpg');"></div>
             <div class="slide" style="background-image: url('https://imgur.com/aP4zABx.jpg');"></div>
           </div>
         </div>
-        <div style="flex: 1; min-width: 350px;">
+        <div style="flex: 1; min-width: 300px;">
           <h2>Registros Atuais</h2>
           <p>Imagens que documentam o estado atual das dependências. A reforma visa sanar problemas estruturais, elétricos e hidráulicos urgentes para garantir a dignidade do trabalho policial e do cidadão atendido.</p>
         </div>
