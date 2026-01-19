@@ -35,24 +35,23 @@
       padding: 0 20px;
     }
 
-    /* --- HEADER (BRANCO E DISCRETO) --- */
+    /* --- HEADER (MENOR E NÃO FIXO) --- */
     header {
       background: var(--pure-white);
-      padding: 10px 0;
+      padding: 5px 0; /* Header ainda mais reduzido */
       text-align: center;
-      position: sticky;
-      top: 0;
+      position: relative; /* Alterado de sticky para relative */
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .logo {
-      width: 100px;
+      width: 80px; /* Logo menor para ocupar menos espaço vertical */
       height: auto;
       transition: 0.3s;
     }
 
-    nav { margin-top: 5px; }
+    nav { margin-top: 0px; }
 
     nav a {
       margin: 0 15px;
@@ -60,11 +59,11 @@
       text-transform: uppercase;
       font-weight: 700;
       text-decoration: none;
-      font-size: 0.8em;
+      font-size: 0.75em; /* Fonte levemente menor */
       letter-spacing: 1px;
     }
 
-    /* --- HERO IMPACTANTE (TEXTO SOBRE IMAGEM) --- */
+    /* --- HERO IMPACTANTE --- */
     #home {
       height: 90vh;
       position: relative;
@@ -192,7 +191,7 @@
       font-family: 'Oswald', sans-serif;
     }
 
-    /* --- PILARES (GRID COM ÍCONES) --- */
+    /* --- PILARES --- */
     .goals-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -393,7 +392,7 @@
         `R$ ${arrecadado.toLocaleString("pt-BR")} ARRECADADOS (${percentual.toFixed(1)}%)`;
     }, 500);
 
-    // --- LÓGICA DO SLIDESHOW (Efeito Zoom e Troca) ---
+    // --- LÓGICA DO SLIDESHOW ---
     function setupSlideshow(containerId) {
       const container = document.getElementById(containerId);
       const slides = container.querySelectorAll('.slide');
@@ -403,7 +402,7 @@
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
-      }, 5000); // Troca a cada 5 segundos
+      }, 5000);
     }
 
     setupSlideshow('slideshow-projeto');
